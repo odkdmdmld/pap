@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111"><title>حلاقة</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="brand">حِلاقة<span>.</span></div><a href="#booking" class="topbtn">احجز موعدك</a></header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow">أناقة تبدأ من التفاصيل</div><h1>قصّتك،<br><em>على مزاجك.</em></h1>
+ <p>اختر الخدمة والوقت المناسب، وثبّت حجزك بخطوات بسيطة.</p><a class="primary" href="#booking">احجز الآن <b>←</b></a>
+ </div><div class="hero-art"><div class="ring"></div><div class="hero-scissors">✂</div><div class="hero-word">BARBER<br><small>STUDIO</small></div></div>
+</section>
+<section class="section" id="services"><div class="section-head"><div><span class="eyebrow">الخدمات والأسعار</span><h2>اختَر خدمتك</h2></div><span class="muted">بالدينار العراقي</span></div>
+<div class="services">
+ <article class="service"><div class="service-icon">✂</div><div><h3>قص شعر</h3><p>قص وتنسيق حسب اختيارك</p></div><strong>5,000 <small>د.ع</small></strong></article>
+ <article class="service"><div class="service-icon">▤</div><div><h3>حلاقة ذقن</h3><p>ترتيب وتحديد الذقن</p></div><strong>3,000 <small>د.ع</small></strong></article>
+ <article class="service featured"><div class="service-icon">✦</div><div><h3>قص شعر + ذقن</h3><p>إطلالة متكاملة</p></div><strong>7,000 <small>د.ع</small></strong></article>
+ <article class="service"><div class="service-icon">◉</div><div><h3>تنظيف بشرة</h3><p>عناية وتنظيف للوجه</p></div><strong>10,000 <small>د.ع</small></strong></article>
+</div></section>
+<section class="section styles-section"><div class="section-head"><div><span class="eyebrow">اختر الإطلالة</span><h2>أنواع قصّات الشعر</h2></div></div>
+<div class="cuts">
+ <button class="cut" data-cut="تدريج جانبي"><div class="cut-art fade"><span></span></div><b>تدريج جانبي</b><small>Fade</small></button>
+ <button class="cut" data-cut="قصة كلاسيكية"><div class="cut-art classic"><span></span></div><b>قصة كلاسيكية</b><small>Classic</small></button>
+ <button class="cut" data-cut="قصة قصيرة"><div class="cut-art crop"><span></span></div><b>قصة قصيرة</b><small>Crop</small></button>
+ <button class="cut" data-cut="حلاقة صفر"><div class="cut-art zero"><span></span></div><b>حلاقة صفر</b><small>Buzz cut</small></button>
+</div><p class="hint">صور توضيحية مرسومة داخل الموقع. يمكنك اختيار القصة لتظهر تلقائياً في نموذج الحجز.</p>
+</section>
+<section class="section booking-section" id="booking"><div class="section-head"><div><span class="eyebrow">موعدك بانتظارك</span><h2>احجز موعد</h2></div><div class="secure">● حجز إلكتروني</div></div>
+<form id="bookingForm">
+ <div class="form-grid">
+  <label>الاسم الكامل<input name="customer_name" required maxlength="80" placeholder="اكتب اسمك"></label>
+  <label>رقم الهاتف<input name="phone" required inputmode="tel" maxlength="20" placeholder="07XXXXXXXXX"></label>
+  <label>الخدمة<select name="service" id="service" required><option value="">اختر الخدمة</option><option>قص شعر</option><option>حلاقة ذقن</option><option>قص شعر + ذقن</option><option>تنظيف بشرة</option></select></label>
+  <label>القصة المفضلة<select name="haircut" id="haircut"><option value="لم أحدد">لم أحدد</option><option>تدريج جانبي</option><option>قصة كلاسيكية</option><option>قصة قصيرة</option><option>حلاقة صفر</option></select></label>
+  <label>تاريخ الحجز<input type="date" name="booking_date" id="date" required></label>
+  <label>وقت الحجز<select name="booking_time" id="time" required><option value="">اختر التاريخ أولاً</option></select></label>
+ </div>
+ <label>ملاحظات إضافية<textarea name="notes" rows="3" placeholder="أي تفاصيل تريد إخبار الحلاق بها (اختياري)"></textarea></label>
+ <div class="price-line"><span>السعر</span><strong id="price">—</strong></div>
+ <button class="primary submit" type="submit" id="submit">تأكيد الحجز</button>
+ <p class="form-note" id="status" role="status">لن يتم تثبيت الموعد إلا بعد نجاح إرسال الحجز.</p>
+</form></section>
+</main>
+<footer><div class="brand">حِلاقة<span>.</span></div><p>مواعيد مرتبة. إطلالة أجمل.</p><small>© <span id="year"></span> حلاقة</small></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script>
+</body></html>
